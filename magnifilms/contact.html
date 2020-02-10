@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Magnifilms</title>
+    <script src="js/picturefill.min.js"></script>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/meanmenu.min.css" media="all" />
+  </head>
+  <body>
+    <header id="mainHeader">
+      <div id="logo">
+        <a href="#"><img src="images/logo.png" alt="magnifilms"/></a>
+      </div>
+      <h2>des films magnifiques</h2>
+    </header>
+
+    <div id="topImage">
+      <picture>
+        <source
+          srcset="images/hollywood_1280.jpg"
+          media="(min-width: 1001px)"
+        />
+        <source srcset="images/hollywood_1000.jpg" media="(min-width: 500px)" />
+        <img srcset="images/hollywood_500.jpg" alt="hollywood" />
+      </picture>
+    </div>
+
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="index.html" title="Mes dernières trouvailles"
+            >Mes dernières trouvailles</a
+          >
+        </li>
+        <li>
+          <!-- <a href="about.html" title="A propos">A propos</a> -->
+          <a href="apropos.html" title="A propos">A propos</a>
+          <!--
+          <ul>
+              <li><a href="test1.html" title="test 1">Test 1</a></li>
+              <li><a href="test2.html" title="test 2">Test 2</a></li>
+            </ul>
+        --></li>
+        <!--
+        <li><a href="me.html" title="Qui sommes nous">Qui sommes-nous ?</a></li>
+        -->
+        <li class="active">
+          <a href="contact.html" title="Contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <section id="films">
+        <h3>Contact</h3>
+
+        <hr />
+
+        <form>
+          <!--Penser à coller les balises label et input pour avoir une bonne disposition qui est forcée à cause de display: inline-block sur le form-->
+          <label for="Nom">Nom</label
+          ><input type="text" name="nom" placeholder="Nom..." />
+          <br />
+
+          <label for="E-mail">E-mail</label
+          ><input type="text" name="email" placeholder="E-mail..." />
+          <br />
+
+          <label for="Objet">Objet</label
+          ><select name="objet">
+            <option value="infos">Demande d'infos</option>
+            <option value="devis">Demande de devis</option>
+          </select>
+          <br />
+
+          <label for="Message">Message</label
+          ><textarea
+            name="message"
+            placeholder="Veuillez écrire un message ici..."
+          ></textarea>
+          <br />
+
+          <input type="submit" />
+        </form>
+      </section>
+
+      <aside id="related">
+        <article>
+          <h2>Film au hasard</h2>
+          <div class="randomFilmImage">
+            <a href="#"
+              ><img src="images/eternal_sunshine_210.jpg" alt="bandeau"
+            /></a>
+          </div>
+          <div class="description">
+            <h3>Eternal Sunshine of the Spotless Mind</h3>
+            <p>
+              Suite à une déception amoureuse, un homme cherche par tous les
+              moyens d'oublier sa femme. Mais est-ce vraiment ce qu'il souhaite
+              ?
+            </p>
+          </div>
+        </article>
+
+        <section id="social">
+          <ul>
+            <li>
+              <a href="#"><img src="images/twitter.png" alt="twitter"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="images/fb.png" alt="facebook"/></a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer id="pageFooter"><p>Copyright</p></footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <!--le main doit toujours être après les autres scripts-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Magnifilms</title>
+    <script src="js/picturefill.min.js"></script>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/meanmenu.min.css" media="all" />
+  </head>
+  <body>
+    <header id="mainHeader">
+      <div id="logo">
+        <a href="#"><img src="images/logo.png" alt="magnifilms"/></a>
+      </div>
+      <h2>des films magnifiques</h2>
+    </header>
+
+    <div id="topImage">
+      <picture>
+        <source
+          srcset="images/hollywood_1280.jpg"
+          media="(min-width: 1001px)"
+        />
+        <source srcset="images/hollywood_1000.jpg" media="(min-width: 500px)" />
+        <img srcset="images/hollywood_500.jpg" alt="hollywood" />
+      </picture>
+    </div>
+
+    <nav id="mainNav">
+      <ul>
+        <li class="active">
+          <a href="index.html" title="Mes dernières trouvailles"
+            >Mes dernières trouvailles</a
+          >
+        </li>
+        <li>
+          <!-- <a href="about.html" title="A propos">A propos</a> -->
+          <a href="apropos.html" title="A propos">A propos</a>
+          <!--
+          <ul>
+              <li><a href="test1.html" title="test 1">Test 1</a></li>
+              <li><a href="test2.html" title="test 2">Test 2</a></li>
+            </ul>
+        --></li>
+        <!--
+        <li><a href="me.html" title="Qui sommes nous">Qui sommes-nous ?</a></li>
+        -->
+        <li><a href="contact.html" title="Contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <section id="films">
+        <h3>Mes dernières trouvailles</h3>
+
+        <hr />
+
+        <div class="video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Q5YJPSROTA8"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <article>
+          <h2>Garden State</h2>
+          <div class="filmImage">
+            <a href="#"
+              ><img src="images/gardenstate_470.jpg" alt="bandeau"
+            /></a>
+          </div>
+          <div class="description">
+            <h3 class="date">Mai 2012</h3>
+            <p>
+              Un homme troublé retourne à la maison pour l'enterrement de sa
+              mère, après avoir été éloigné de sa famille depuis une dizaine
+              d'années.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <h2>Iron Man 3</h2>
+          <div class="filmImage">
+            <a href="#"><img src="images/ironman_470.jpg" alt="bandeau"/></a>
+          </div>
+          <div class="description">
+            <h3 class="date">Avril 2012</h3>
+            <p>
+              Le 3e volet du célèbre super héros de chez Marvel. Cette fois,
+              Tony Stark a des insomnies, alors qu'un certain mandarin commence
+              à être menaçant.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <h2>Skyfall</h2>
+          <div class="filmImage">
+            <a href="#"><img src="images/skyfall_470.jpg" alt="bandeau"/></a>
+          </div>
+          <div class="description">
+            <h3 class="date">Mars 2012</h3>
+            <p class="description">
+              Dans ce nouveau volet de James Bond, le ténébreux séducteur est
+              contraint de retourner en Grande Bretagne à cause d'une menace
+              contre le MI6.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <aside id="related">
+        <article>
+          <h2>Film au hasard</h2>
+          <div class="randomFilmImage">
+            <a href="#"
+              ><img src="images/eternal_sunshine_210.jpg" alt="bandeau"
+            /></a>
+          </div>
+          <div class="description">
+            <h3>Eternal Sunshine of the Spotless Mind</h3>
+            <p>
+              Suite à une déception amoureuse, un homme cherche par tous les
+              moyens d'oublier sa femme. Mais est-ce vraiment ce qu'il souhaite
+              ?
+            </p>
+          </div>
+        </article>
+
+        <section id="social">
+          <ul>
+            <li>
+              <a href="#"><img src="images/twitter.png" alt="twitter"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="images/fb.png" alt="facebook"/></a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer id="pageFooter"><p>Copyright</p></footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <!--le main doit toujours être après les autres scripts-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Magnifilms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="css/normalize.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+    <style>
+      /* styles spécifiques au tableau */
+
+      #aproposTable {
+        margin-bottom: 50px;
+        border: 1px solid black;
+      }
+
+      #aproposTable tr td,
+      #aproposTable tr th {
+        min-width: 100px;
+        text-align: left;
+        border: 1px solid black;
+      }
+
+      @media only screen and (max-width: 480px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+
+        thead tr {
+          /* on cache les titres */
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+
+        tr {
+          border: 1px solid #ccc;
+        }
+
+        tr:nth-child(even) {
+          background: #d3d3d3;
+        }
+
+        td {
+          /* chaque td se comporte comme une ligne */
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 40%;
+        }
+
+        td:before {
+          /* on stylyse les éléments rajoutés devant chaque td */
+          position: absolute;
+          top: 2px; /* comme un padding-top */
+          left: 2px; /* comme un padding-left */
+          width: 40%;
+          padding-right: 10px;
+          white-space: nowrap;
+          font-weight: bold;
+        }
+
+        /* on rajoute les labels, le contenu est l'intitulé de chaque champ */
+        td:nth-of-type(1):before {
+          content: "Prénom";
+        }
+        td:nth-of-type(2):before {
+          content: "Nom";
+        }
+        td:nth-of-type(3):before {
+          content: "E-mail";
+        }
+      }
+    </style>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/fitvids.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".video").fitVids();
+
+        ajouter_bt_menu();
+        maj_menu();
+      });
+
+      $(window).resize(function() {
+        maj_menu();
+      });
+
+      function ajouter_bt_menu() {
+        $("#mainNav ul").before('<div id="bt_menu">☰</div>');
+        $("#bt_menu").click(function() {
+          $("#mainNav ul").toggle();
+        });
+      }
+
+      function maj_menu() {
+        var sw = document.body.clientWidth;
+        if (sw < 480) {
+          $("#bt_menu").show();
+          $("#mainNav ul").hide();
+        }
+        if (sw >= 480) {
+          $("#bt_menu").hide();
+          $("#mainNav ul").show();
+        }
+      }
+    </script>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="scripts/respond.js"></script>
+    <![endif]-->
+    <script src="scripts/matchmedia.js"></script>
+    <script src="scripts/picturefill.js"></script>
+
+    <script>
+      if (window.matchMedia("(min-width: 600px)").matches) {
+        console.log("600px ou plus");
+      } else {
+        console.log("moins de 600px");
+      }
+    </script>
+  </head>
+  <body>
+    <header id="mainHeader">
+      <div id="logo">
+        <a href="#"><img src="images/logo.png" alt="magnifilms"/></a>
+      </div>
+      <hgroup>
+        <h1 class="invisible">Magnifilms</h1>
+        <h2>des films magnifiques</h2>
+      </hgroup>
+    </header>
+
+    <div id="topImage">
+      <div data-picture data-alt="Bandeau">
+        <div data-src="images/hollywood_500.jpg"></div>
+        <div
+          data-src="images/hollywood_1000.jpg"
+          data-media="(min-width: 490px)"
+        ></div>
+        <div
+          data-src="images/hollywood_1280.jpg"
+          data-media="(min-width: 1000px)"
+        ></div>
+        <!-- Si JS désactivé -->
+        <noscript
+          ><img src="images/hollywood_1280.jpg" alt="bandeau"
+        /></noscript>
+      </div>
+    </div>
+
+    <nav id="mainNav">
+      <h1 class="invisible">Menu</h1>
+      <ul>
+        <li class="active">
+          <a href="index.html" title="Mes dernières trouvailles"
+            >Mes dernières trouvailles</a
+          >
+        </li>
+        <li><a href="apropos.html" title="A propos">A propos</a></li>
+        <li><a href="contact.html" title="Contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <section id="films">
+        <h3>A propos</h3>
+
+        <h4>Le staff</h4>
+
+        <table id="aproposTable">
+          <thead>
+            <tr>
+              <th>Prénom</th>
+              <th>Nom</th>
+              <th>E-mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john.doe@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Jane</td>
+              <td>Doe</td>
+              <td>jane.doe@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside id="related"></aside>
+    </div>
+
+    <footer id="pageFooter">
+      <p class="invisible">Copyright</p>
+    </footer>
+  </body>
+</html>

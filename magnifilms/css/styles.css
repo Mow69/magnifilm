@@ -1,0 +1,427 @@
+body {
+  background: #9befef;
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Pour garder le ratio de l'image pour pas qu'elle dépasse de son conteneur */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+form {
+  /* border: 1px solid; */
+  width: 80%;
+  /* pour centrer verticalement avec 30px horizontalement avec auto*/
+  margin: 30px auto;
+}
+
+form label {
+  /* Pour que les champs s'aligne, étant par défaut des inline, le width ne marche pas sur eux, on les change en inline-block puis on leur donne un width */
+  width: 25%;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-top: 15px;
+}
+
+form input,
+form select,
+form textarea {
+  box-sizing: border-box;
+  width: 75%;
+  margin: 10px 0;
+  height: 30px;
+  line-height: 30px;
+}
+
+form textarea {
+  min-height: 300px;
+}
+
+form input[type="submit"] {
+  width: 50%;
+  margin: auto;
+  display: block;
+  background: teal;
+  border: none;
+  color: white;
+}
+
+/* A commenter si on utilise la méthode avec le plugin jquery (cf les scripts dans le html) */
+/*
+.video{
+    width:100%;
+    padding-bottom:56%;
+    /* Pour voir l'espace que prend la div video qui contient l'iframe */
+/* border: 1px solid; */
+/* pour faire de cet element le conteneur de l'iframe et dont sont point de départ sur la page en haut a gauche */
+/* position: relative;
+}
+
+.video iframe{
+/* pour que la video reste par dessus en gardant ses dimension sans être rogné par ce qui l'entoure*/
+/*
+    position:absolute;
+    top:0;
+    left:0px;
+    /* pour que l'iframe remplisse toute la div video */
+/*
+    width:100%;
+    height:100%;
+}
+*/
+
+/* couleur des titres */
+
+h1,
+h2,
+#films h3 {
+  color: #ed9837;
+}
+
+hr {
+  margin-top: -10px;
+  border: 1px solid teal;
+}
+div,
+article,
+section,
+nav,
+header,
+footer,
+aside {
+  box-sizing: border-box;
+}
+
+#films h3,
+#related h2 {
+  color: #218e8e;
+}
+
+#related h3 {
+  color: #ffffff;
+}
+
+/* bandeau */
+
+#mainHeader {
+  height: 80px;
+  background: #218e8e;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+#mainHeader h2 {
+  font: "Times New Roman", Times, serif;
+  font-style: italic;
+  margin-top: -40px;
+  margin-left: 280px;
+  position: relative;
+}
+
+/* image */
+
+/*
+#topImage{
+    */
+/*  pour faire varier les hauteur des images ou videos, mettre des % dans height ne marche pas, il faut plutot un padding-bottom: 68%; Il faut trouver le bon ration entre taille originelle de l'image et padding-bottom, entre hauteur et largeur : 280/1800 = 22 %*, penser à enlver le height si on met padding-bottom et background-size/
+    background: url(../images/hollywood_1280.jpg) no-repeat center;
+    /* Bien les ces 2 propriétés à la fin sinon avec le padding du dessus ça se remet à 0 à chaque fois */
+/*
+    background-size:cover;
+    padding:0;
+    margin:0;
+    padding-bottom:22%;
+}
+*/
+
+/* menu */
+
+#mainNav {
+  min-height: 40px;
+  background: #ed9837;
+  padding: 0;
+  margin: 0;
+}
+
+#mainNav ul {
+  margin-top: 0px;
+  padding: 10px;
+  margin: 0;
+}
+
+#mainNav ul li {
+  list-style-type: none;
+  color: white;
+  text-decoration: none;
+  /* Pour avoir un menu qui s'affiche bien en mobile */
+  display: inline-block;
+  margin: 5px;
+}
+
+#social ul li {
+  list-style-type: none;
+  color: white;
+  text-decoration: none;
+  display: inline;
+}
+
+#mainNav ul li a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+}
+
+#mainNav ul li.active a {
+  color: #ed9837;
+  background: white;
+}
+
+/* conteneur colonnes */
+
+#content {
+  display: block; /* necessaire pour l'effet faux columns */
+  background: #f6b468;
+  overflow: hidden; /* necessaire pour l'effet faux columns */
+}
+
+/* films */
+
+#films {
+  float: left;
+  width: 75%;
+  background: #ffffff;
+  padding: 0px 10px;
+  margin: 0;
+  /* pour le form contact.html que ça s'affiche mieux */
+  min-height: 500px;
+}
+
+#films h2 {
+  clear: both;
+}
+
+#films .filmImage {
+  float: left;
+  /* forcer un width: 50%; */
+  width: 50%;
+  margin-bottom: 30px;
+  margin-right: 1%;
+}
+
+/* related */
+
+#related {
+  float: right;
+  width: 25%;
+  background: #f6b468;
+  padding: 0px 10px;
+  margin: 0;
+}
+
+#related .randomFilmImage {
+  text-align: center;
+}
+
+/* social */
+
+#social ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  /* a enlever quand on met img: max-width: 100% sinon y a un décalage des images de social ici */
+  /* width: 230px; */
+  padding-top: 10px;
+}
+
+/* footer */
+
+#pageFooter {
+  clear: both;
+  height: 40px;
+  background: #218e8e;
+  color: white;
+  padding: 0px 5px;
+  margin: 0;
+}
+
+#pageFooter p {
+  position: absolute;
+  margin-top: 10px;
+}
+
+/* tablette */
+/* tablette et mobiles (mise à jour au moment du mobile)*/
+
+/* A l'étape de faaire les media queries tablette on garde le min-width suivant pour se limiter un temps comme dans la ligne suivante commentée, mais une fois qu'on passe à l'étape mobile on l'enlève comme la ligne suivante décommentée puis on ajoute la parte mobile plus bas avec juste le mac-width */
+/* @media only screen and (min-width: 501px) and (max-width: 900px) { */
+@media only screen and (max-width: 1100px) {
+  body {
+    width: 100%;
+  }
+
+  #mainHeader {
+    /* text-align: center pointe sur l'élément conteneur qu'on veux centrer; */
+    text-align: center;
+  }
+
+  #mainHeader h2 {
+    display: none;
+  }
+
+  /* #logo a {
+	border: 1px solid; */
+  /* Pour que le <a> puisse être en margin: auto, penser à le mettre en display: block d'abord car c'est un inline par défauit et il ne peut pas avoir de margin, il est minimal.*/
+  /* display: block;
+	margin: auto;
+	width: 260px;
+} */
+
+  #mainNav {
+    text-align: center;
+  }
+
+  #content {
+    background: white;
+  }
+
+  #films {
+    float: none;
+    width: 100%;
+    /* pour le form contact.html que ça s'affiche mieux */
+    min-height: 0;
+  }
+
+  #related {
+    /* Pour empêcher un élément de combler l'espace vide quand on a un élément flottant (float) */
+    clear: both;
+    float: none;
+    width: 70%;
+    margin: auto;
+    background: white;
+  }
+
+  #related h3 {
+    color: orange;
+  }
+
+  #related .randomFilmImage {
+    float: left;
+    margin-right: 20px;
+  }
+
+  #social {
+    clear: both;
+  }
+
+  #social ul {
+    margin: auto;
+  }
+}
+
+/* mobiles */
+@media only screen and (max-width: 500px) {
+  /* #topImage */
+  #topImage {
+    display: none;
+  }
+
+  /* #mainNav */
+
+  /*
+    #mainNav ul::before{
+        content:"\2630";
+        font-size:2em;
+        width:100%;
+        display:block;
+        padding:10px;
+        color:white;
+        box-sizing:border-box;
+    }
+    */
+
+  #mainNav ul {
+    margin: 0;
+    padding: 5px 10px;
+  }
+
+  #mainNav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #mainNav ul li a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid white;
+  }
+
+  /* #films */
+  #films article .filmImage {
+    float: none;
+    width: 100%;
+  }
+
+  #films article {
+    margin: 30px 0;
+  }
+
+  #films article .description {
+    margin-top: -20px;
+  }
+
+  #films article .description h3 {
+    display: none;
+  }
+
+  /* #content */
+  /* #content form {
+    width: 100%;
+    text-align: center;
+  }
+
+  #content form label {
+    display: block;
+  }
+
+  #content form input,  #content form select {
+    margin-bottom: 70px;
+  } */
+
+  form {
+    width: 100%;
+  }
+
+  form label {
+    display: block;
+    margin-top: 20px;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+  }
+
+  form input[type="submit"] {
+    margin-top: 30px;
+    height: 40px;
+    width: 100%;
+    display: block;
+  }
+
+  /* #related */
+  #related {
+    width: 100%;
+  }
+
+  #related .randomFilmImage {
+    float: none;
+  }
+}
